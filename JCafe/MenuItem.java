@@ -5,11 +5,14 @@ import java.util.Scanner;
 
 public class MenuItem {
 
-	
+
 	Hashtable<Integer,String> itemName=new Hashtable<Integer,String>();  
 	Hashtable<Integer,Integer> itemPrice=new Hashtable<Integer,Integer>();
  
 Scanner s=new Scanner(System.in);
+
+String bill=" ";
+int totalAmount;
 void Create()
 {
 	itemName.put(100,"chicken 65");  
@@ -41,58 +44,71 @@ void Create()
 	itemPrice.put(111,15);  
 
 
+for(Map.Entry m:itemName.entrySet()){  
+	if(m.getKey()=="100")
+	{System.out.println("Starter's \n");}
+	if(m.getKey()=="104")
+	{System.out.println("Main Course \n");}
+	if(m.getKey()=="108")
+	{System.out.println("Desert \n");}
+ System.out.println(m.getKey()+" "+m.getValue());  
+}  
+
 select();
 
 }
 void select()
 {
-  
-	for(Map.Entry m:itemName.entrySet()){  
-		if(m.getKey().equals("100"))
-		{System.out.println("Starter's \n");}
-		if(m.getKey().equals("104"))
-		{System.out.println("Main Course \n");}
-		if(m.getKey().equals("108"))
-		{System.out.println("Desert \n");}
-	 System.out.println(m.getKey()+" "+m.getValue());  
-	}  
-
+ 
 boolean select=true;
 while(select){
-	System.out.println("Enter Menu Code to select\n");
+	System.out.println("Enter Menu Code to select...\n");
 int code=s.nextInt();
+if(code<100||code>111)
+{System.out.println("Invalid item"); }
 
 for(Map.Entry m:itemName.entrySet()){  
-
 	if(m.getKey().equals(code))
-		{System.out.println(m.getValue());
+		{System.out.print(m.getValue());
 		for(Map.Entry n:itemPrice.entrySet())
 		{	if(n.getKey().equals(code))
-			System.out.println(" "+n.getValue());
-		
-		System.out.println("\nSelect one more item Y:Yes N:No");
-		char c=s.next().charAt(0);
-		if (c=='Y' || c=='y')
-				{
-			select();
-				}
-		else if (c=='n' || c=='N')
-		{
-select=false;
-
-		}
-		else
-		{
-System.out.println("\nEnter Y or N ");
-		}
+			{
+			//System.out.print(" "+n.getValue());
+			System.out.print(" Enter Quantiy: ");
+			int q=s.nextInt();
+			int amount =((int) n.getValue())*q;
+			totalAmount+=amount;
+			String msg=" "+m.getValue()+" "+n.getValue()+" * "+q+" "+amount+"\n";
+			bill+=" "+msg;
+			System.out.println(msg+"\n*****");
+			
+			
+			
+			System.out.println("\nSelect one more item Y:Yes N:No");
+			char c=s.next().charAt(0);
+			if (c=='Y' || c=='y')
+					{
+				select();
+					}
+			else if (c=='n' || c=='N')
+			{
+	select=false;
+	//System.out.println(bill+" "+totalAmount);
+			}
+			else
+			{
+	System.out.println("\nEnter Y or N ");
+			}
+			}
 		}	//2st for loop
-	} //1st for loop
-}
-}	//while loop
-
-
-
+	 //1st for loop
+		}
+	
+}//while loop
 
 }
 
+System.out.println("Order Summary: \n"+bill+"\nTotal Amount: "+totalAmount);
+
+}
 }

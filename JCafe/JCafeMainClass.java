@@ -7,19 +7,22 @@ public class JCafeMainClass {
 	public static void main(String[] args) {
 		s = new Scanner(System.in);
 		
-		boolean yn=false;
-		System.out.println("*** JCafe Welcome you ***\n \tSir/Madam");
 		
-		while(yn==false)
-		{
-			System.out.println("\nWould you like to have a Order Something \nYes:Y No:N");
+		System.out.println("*** JCafe Welcome you ***\n\tSir/Madam\n\n");
+		
+		
+		Register reg= new Register();
+			reg.newRegister();
 			
-			char c=s.next().charAt(0);
-			if(c == 'Y' ||c == 'y')
-				break;
-		}
-		
-		System.out.println("\nsup");
+			boolean yn=false;
+			while(yn==false)
+			{
+				System.out.println("\nWould you like to Order Something \nYes:Y No:N");
+				
+				char c=s.next().charAt(0);
+				if(c == 'Y' ||c == 'y')
+					break;
+			}
 		MenuItem mi=new MenuItem();
 		//mi.showMenu();
 		mi.Create();
