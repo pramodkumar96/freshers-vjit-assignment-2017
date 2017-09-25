@@ -32,3 +32,8 @@ javac JCafeMainClass.java
 java JCafeMainClass
 
 :)
+****************************
+Thanks for reading this,
+Here's a Gift for you
+	"R30"
+use the above coupon code for 30% discount in my Application.
