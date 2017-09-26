@@ -1,9 +1,9 @@
-import java.util.Enumeration;
+
 import java.util.Hashtable;
 import java.util.Map;
 import java.util.Scanner;
 
-public class MenuItem {
+public class MenuItem extends Register{
 
 
 	Hashtable<Integer,String> itemName=new Hashtable<Integer,String>();  
@@ -13,8 +13,11 @@ Scanner s=new Scanner(System.in);
 
 String bill=" ";
 int totalAmount;
-void Create()
+void nonveg()
 {
+	
+	System.out.println("Enter Menu Code to select...\nItemCode Name");
+	//menu for non veg
 	itemName.put(100,"chicken 65");  
 	itemName.put(101,"french fries");  
 	itemName.put(102,"Mashroom");  
@@ -42,21 +45,44 @@ void Create()
 	itemPrice.put(109,25);  
 	itemPrice.put(110,10);  
 	itemPrice.put(111,15);  
-
-
-for(Map.Entry m:itemName.entrySet()){  
-	if(m.getKey()=="100")
-	{System.out.println("Starter's \n");}
-	if(m.getKey()=="104")
-	{System.out.println("Main Course \n");}
-	if(m.getKey()=="108")
-	{System.out.println("Desert \n");}
- System.out.println(m.getKey()+" "+m.getValue());  
-}  
-
-select();
+  
+//calling veg method
+veg();
 
 }
+public void veg() {
+	
+	
+	itemName.put(112,"Palak paneer");  
+	itemName.put(113,"Dal makhani");  
+	itemName.put(114,"Khichdi");  
+	itemName.put(115,"Chole bhature");  
+
+	itemName.put(116,"Daal puri");  
+	itemName.put(117,"Gajar ka halwa");  
+	itemName.put(118,"Rasgulla");  
+	itemName.put(119,"Laddu");  
+	
+	itemPrice.put(112,80);  
+	itemPrice.put(113,60);  
+	itemPrice.put(114,30);  
+	itemPrice.put(115,40);  
+	itemPrice.put(116,50);  
+	itemPrice.put(117,40);  
+	itemPrice.put(118,40);  
+	itemPrice.put(119,20);  
+	
+	for(Map.Entry m:itemName.entrySet()){
+		int i=(int) m.getKey();
+		if(i>112)
+		{System.out.print("");}
+	
+			System.out.println(m.getKey()+" "+m.getValue());
+	}
+	select();
+	}
+
+
 void select()
 {
  
@@ -64,7 +90,7 @@ boolean select=true;
 while(select){
 	System.out.println("Enter Menu Code to select...\n");
 int code=s.nextInt();
-if(code<100||code>111)
+if(code<100||code>119)
 {System.out.println("Invalid item"); }
 
 for(Map.Entry m:itemName.entrySet()){  
@@ -95,10 +121,7 @@ for(Map.Entry m:itemName.entrySet()){
 	select=false;
 	//System.out.println(bill+" "+totalAmount);
 			}
-			else
-			{
-	System.out.println("\nEnter Y or N ");
-			}
+			
 			}
 		}	//2st for loop
 	 //1st for loop
@@ -107,8 +130,11 @@ for(Map.Entry m:itemName.entrySet()){
 }//while loop
 
 }
-
-System.out.println("Order Summary: \n"+bill+"\nTotal Amount: "+totalAmount);
-
+String customerName=getName();
+System.out.println(customerName+" your Order Summary \n"+bill+"\nTotal Amount: "+totalAmount);
+	//calling payment method
+	Payment p= new Payment();
+	p.makePayment(totalAmount);
 }
+
 }

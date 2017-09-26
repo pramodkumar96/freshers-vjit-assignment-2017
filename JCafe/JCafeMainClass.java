@@ -24,8 +24,18 @@ public class JCafeMainClass {
 					break;
 			}
 		MenuItem mi=new MenuItem();
+		System.out.println("\nAre you vegetarian \nYES: y No:n");
+		
+		char c2=s.next().charAt(0);
+		if(c2 == 'y' ||c2 == 'y')
+		{System.out.println("\nHere is Meatless Masterpieces \nItemCode Name");
+			mi.veg();}
+		
+		else
+		mi.nonveg();
+		
 		//mi.showMenu();
-		mi.Create();
+		
 
 	}
 
