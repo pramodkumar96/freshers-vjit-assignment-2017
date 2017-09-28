@@ -11,8 +11,12 @@ public class MenuItem extends Register{
  
 Scanner s=new Scanner(System.in);
 
-String bill=" ";
+String bill;
 int totalAmount;
+
+MenuItem(){
+	bill=" ";
+}
 void nonveg()
 {
 	
@@ -77,7 +81,7 @@ public void veg() {
 		if(i>112)
 		{System.out.print("");}
 	
-			System.out.println(m.getKey()+" "+m.getValue());
+			System.out.println(m.getKey()+"\t "+m.getValue());
 	}
 	select();
 	}
@@ -91,15 +95,17 @@ while(select){
 	System.out.println("Enter Menu Code to select...\n");
 int code=s.nextInt();
 if(code<100||code>119)
-{System.out.println("Invalid item"); }
+{System.out.println("********Invalid item********"); }
 
 for(Map.Entry m:itemName.entrySet()){  
 	if(m.getKey().equals(code))
-		{System.out.print(m.getValue());
+		{
+		//Print the Name of menu
+		System.out.print(m.getValue());
 		for(Map.Entry n:itemPrice.entrySet())
 		{	if(n.getKey().equals(code))
 			{
-			//System.out.print(" "+n.getValue());
+			//Print the price of menu
 			System.out.print(" Enter Quantiy: ");
 			int q=s.nextInt();
 			int amount =((int) n.getValue())*q;
@@ -130,8 +136,8 @@ for(Map.Entry m:itemName.entrySet()){
 }//while loop
 
 }
-String customerName=getName();
-System.out.println(customerName+" your Order Summary \n"+bill+"\nTotal Amount: "+totalAmount);
+
+System.out.println(fname+" your Order Summary \n"+bill+"\nTotal Amount: "+totalAmount);
 	//calling payment method
 	Payment p= new Payment();
 	p.makePayment(totalAmount);

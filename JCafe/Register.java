@@ -2,16 +2,24 @@ import java.util.Scanner;
 
 public class Register {
 	
-	String fname=" ",  email=" ";
-	String phone=" ";
+	String fname;
+	String email;
+	String phone;
 	int noOfPeople;
 	Scanner s=new Scanner(System.in);
+	
+	Register(){
+		 fname=" ";
+		 email=" ";
+		 phone=" ";
+	}
 	
 	void newRegister()
 	{
 		int t;
 		System.out.println("Enter First Name: ");
 		fname=s.nextLine().toString();
+		//
 		t=fname.length();
 		while(t<3)
 		{System.out.println("Enter Valid Name: ");
@@ -51,9 +59,9 @@ public class Register {
 		System.out.println("Registered Successfully !! \n\"CC10\" use this code for 10% discount");
 	}
 	
-	String getName()
+	public String getName()
 	{
-		return fname;
+		return this.fname;
 	}
 	
 }

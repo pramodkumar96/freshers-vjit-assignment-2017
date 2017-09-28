@@ -1,42 +1,38 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class JCafeMainClass {
 
 	private static Scanner s;
+	private static int actor;
 
 	public static void main(String[] args) {
-		s = new Scanner(System.in);
-		
-		
-		System.out.println("*** JCafe Welcome you ***\n\tSir/Madam\n\n");
-		
-		
-		Register reg= new Register();
-			reg.newRegister();
-			
-			boolean yn=false;
-			while(yn==false)
-			{
-				System.out.println("\nWould you like to Order Something \nYes:Y No:N");
-				
-				char c=s.next().charAt(0);
-				if(c == 'Y' ||c == 'y')
-					break;
-			}
-		MenuItem mi=new MenuItem();
-		System.out.println("\nAre you vegetarian \nYES: y No:n");
-		
-		char c2=s.next().charAt(0);
-		if(c2 == 'y' ||c2 == 'y')
-		{System.out.println("\nHere is Meatless Masterpieces \nItemCode Name");
-			mi.veg();}
-		
-		else
-		mi.nonveg();
-		
-		//mi.showMenu();
-		
+	start();
 
 	}
 
+	static void start()
+	{
+		s = new Scanner(System.in);
+		try{
+			while(true){
+			System.out.println("Select The Actor as\n1.Customer 2.Manager");
+			actor=s.nextInt();
+			switch (actor){
+			case 1:Customer c=new Customer();
+					c.customerMethod();
+				break;
+			case 2:Manager m=new Manager();
+					m.managerMethod();
+				break;
+			}
+			}
+		}	
+		
+		catch(InputMismatchException e)
+		{
+			System.out.println("***Please Provide only integer***");
+			start();
+		}
+	}
 }
