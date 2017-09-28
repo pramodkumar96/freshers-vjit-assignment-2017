@@ -1,10 +1,17 @@
 import java.util.Scanner;
 
 public class Payment {
+	String cc10;
+	String r30 ;
+	Payment(){
+		 cc10="CC10";
+		 r30 ="R30";
+	}
 Scanner s= new Scanner(System.in);
-int amount,dis;
+int amountTotal,dis;
+
 	void makePayment(int amount){
-		this.amount=amount;
+		amountTotal=amount;
 		System.out.println("Do you have any COUPON code: ? Yes:Y No:N\n");
 		char c2=s.next().charAt(0);
 		if(c2 == 'y' ||c2 == 'y')
@@ -25,12 +32,12 @@ int amount,dis;
 		{case 1:
 			System.out.print("Enter Cash ");
 			int givenCash=s.nextInt();
-			if(givenCash<amount)
+			if(givenCash<amountTotal)
 			{
-				System.out.print(" More $"+(amount-givenCash));
+				System.out.print(" More $"+(amountTotal-givenCash));
 				break;	
 			}
-			System.out.println(" Return $"+(givenCash-amount));
+			System.out.println(" Return $"+(givenCash-amountTotal));
 			break;
 		case 2:
 			System.out.println("Swipe Card");
@@ -51,21 +58,19 @@ int amount,dis;
 		// TODO Auto-generated method stub
 		System.out.print("\nEnter Code: ");
 		String code=s.next().toString().toUpperCase();
-		if(code.equals("CC10"))
+		if(code.equals(cc10))
 		{
-		float d=(float) (amount*0.10);
-		dis-= (int) (amount-d);
-		amount=amount-dis;
-		System.out.println("amount payable after discount $"+amount);
+		int d=(int) (amountTotal*0.10);
+		amountTotal=amountTotal-d;
+		System.out.println("amount payable after discount $"+amountTotal);
 		return 1;
 			
 		}
-		if(code.equals("R30"))
+		if(code.equals(r30))
 		{
-		float d=(float) (amount*0.30);
-		dis-= (int) (amount-d);
-		
-		System.out.println("amount payable after discount $"+amount);
+			int d=(int) (amountTotal*0.30);
+			amountTotal=amountTotal-d;
+		System.out.println("amount payable after discount $"+amountTotal);
 			return 1;
 		}
 		return 0;
