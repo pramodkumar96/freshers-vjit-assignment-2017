@@ -15,7 +15,7 @@ public class Register {
 	}
 	//wioo= walk in or order online
 	void newRegister(int wioo)
-	{
+	{System.out.println("\nGive details for Registration and Offers \n\n");
 		int t;
 		System.out.println("Enter First Name: ");
 		fname=s.nextLine().toString();
