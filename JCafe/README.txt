@@ -9,7 +9,7 @@ The main challenges of resturant is to handle WALK-IN EAT and ONLINE ORDERING ar
 
 All the operation are simple just by using 'Y' and 'N', Y:yes and N:no
 
-					These are functionalities covered in this:
+				These are functionalities covered in this:
 
 1.Registration for new Customers with simple validation.
 
