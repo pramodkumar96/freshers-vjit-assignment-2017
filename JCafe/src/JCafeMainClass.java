@@ -16,7 +16,7 @@ public class JCafeMainClass {
 		s = new Scanner(System.in);
 		try{
 			while(true){
-			System.out.println("\nJCafe by Pramod Kumar\n1.Walk in \n2.Order Online\n3.Know About Us");
+			System.out.println("\nJCafe Resturant by Pramod Kumar\n1.Walk in and eat\n2.Order Online\n3.Know About Us");
 			actor=s.nextInt();
 			switch (actor){
 			case 1:Customer c=new Customer();
