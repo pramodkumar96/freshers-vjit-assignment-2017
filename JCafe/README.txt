@@ -1,35 +1,48 @@
-*** JCAfe ***
+ *** JCafe ***
+-by Pramod Kumar
+ ************
 
-The place where you will find Great Food, with low price. 
+About JCafe
+This is Java application, for Cafe / resturants / hotels can be used for as managing all the work from Stating of order to billing.
 
-Eat More PAY Less $
+The main challenges of resturant is to handle WALK-IN EAT and ONLINE ORDERING are covered in this.
+Which is applicable for Walk-in eat and for Ordering online.
+All the operation are simple just by using 'Y' and 'N' Y:yes and N:no
 
-**************************
+
+
+These are functionalities covered in this:
+
+1.Registration for new Customers with simple validation.
+
+2.Ordering Food Menu separately for Veg and Non-Veg.
+
+3.Simple ordering of food just usind item number and it's quantity.
+
+4.Managing Bill for all Item ordered.
+
+5.Adding required taxes and Dilivery charges for Final amount.
+
+6.Allowing users for using Discount Coupon.
+
+7.Finally taking the Feedback of users.
+
 
 HOW TO RUN:
 
 Step 1: 
-Downlaod the java files, and place them in any folder
-i.e: E:\JCafe
+Downlaod the JCafeMainClass.jar and place it in any drive
+i.e: E:\JCafeMainClass.jar
 
 Step 2:
-Open cmd prompt
-i.e: open run and type 'cmd'
+Open folder where the jar file is present and hold shift + press right click 
+select Open cmd prompt here
 
 Step 3:
-change Directory to Your saved folder
-i.e: 
-	E:
-	cd JCafe
+Type the below line in cmd and press enter(without single quote)
+'java -jar JCafeMainClass.jar'
 
-Step 4:
-Complie the JCafeMainClass
-and then Run it.
-
-i.e:
-javac JCafeMainClass.java
-
-java JCafeMainClass
+Now run the Application 
 
 :)
 ****************************
