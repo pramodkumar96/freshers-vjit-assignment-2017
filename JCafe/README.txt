@@ -3,15 +3,13 @@
  ************
 
 About JCafe
-This is Java application, for Cafe / resturants / hotels can be used for as managing all the work from Stating of order to billing.
+This is Java application, for Cafe / resturants / hotels can be used for managing all the work from Starting to Ending.
 
 The main challenges of resturant is to handle WALK-IN EAT and ONLINE ORDERING are covered in this.
-Which is applicable for Walk-in eat and for Ordering online.
-All the operation are simple just by using 'Y' and 'N' Y:yes and N:no
 
+All the operation are simple just by using 'Y' and 'N', Y:yes and N:no
 
-
-These are functionalities covered in this:
+					These are functionalities covered in this:
 
 1.Registration for new Customers with simple validation.
 
@@ -23,9 +21,9 @@ These are functionalities covered in this:
 
 5.Adding required taxes and Dilivery charges for Final amount.
 
-6.Allowing users for using Discount Coupon.
+6.Allowing the use Discount Coupon.
 
-7.Finally taking the Feedback of users.
+7.Finally taking the Feedback from the users.
 
 
 HOW TO RUN:
@@ -36,10 +34,10 @@ i.e: E:\JCafeMainClass.jar
 
 Step 2:
 Open folder where the jar file is present and hold shift + press right click 
-select Open cmd prompt here
+select: Open command window here
 
 Step 3:
-Type the below line in cmd and press enter(without single quote)
+Type the below line (without single quote) in command window and press enter.
 'java -jar JCafeMainClass.jar'
 
 Now run the Application 
