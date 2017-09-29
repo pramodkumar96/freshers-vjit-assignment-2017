@@ -33,8 +33,9 @@ int amountTotal,dis;
 			System.out.print("Enter Cash ");
 			int givenCash=s.nextInt();
 			if(givenCash<amountTotal)
-			{
-				System.out.print(" More $"+(amountTotal-givenCash));
+			{amountTotal-=givenCash;
+				//System.out.print(" More $"+(amountTotal-givenCash));
+			balance(amountTotal);
 				break;	
 			}
 			System.out.println(" Return $"+(givenCash-amountTotal));
@@ -74,6 +75,16 @@ int amountTotal,dis;
 			return 1;
 		}
 		return 0;
+	}
+	
+	private void balance(int amount2) {
+		System.out.println("Need more $"+amount2);
+		 int money=s.nextInt();
+		if(money<amount2)
+		{
+			amount2=amount2-money;
+			balance(amount2);
+		}
 	}
 	
 
